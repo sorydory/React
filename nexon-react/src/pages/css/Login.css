@@ -9,23 +9,65 @@
   margin-top: 150px;
   height: 50px;
   font-size: 35px;
+  text-align: center;
+  margin-bottom: 15px;
 }
-#login .defaulttable {
-  margin: 0 auto;
-  width: 1200px;
-  height: 600px;
-  border-top: 3px solid #CECECE;
-  background-color: #fff;
+#login .inner {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#login .defaulttable .innertable {
-  line-height: 3.5;
-  width: 600px;
+  width: 1000px;
+  background-color: #fff;
   height: 500px;
+  flex-direction: column;
+  border-top: 3px solid #858585;
 }
-#login .defaulttable .innertable tr input {
-  height: 30px;
-  width: 400px;
+#login .inner p {
+  font-size: 14px;
+  color: #535353;
+}
+#login .inner .top {
+  background-color: rebeccapurple;
+}
+#login .inner .idps {
+  color: #7d7d7d;
+  font-size: 12px;
+  font-weight: 600;
+}
+#login .inner .find {
+  display: flex;
+  justify-content: right;
+}
+#login .inner span {
+  padding: 0 15px;
+  font-size: 13px;
+}
+#login .inner .btns {
+  display: flex;
+  flex-direction: column;
+}
+#login .inner button {
+  background-color: #1890FF;
+  border-style: none;
+  margin: 5px 0;
+  width: 450px;
+  height: 40px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+#login .inner button:hover {
+  background-color: #50a4f3;
+}
+#login .inner button:active {
+  background-color: #1472ca;
+}
+#login .inner input {
+  width: 450px;
+  height: 40px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid #C2C9D1;
+}
+#login .inner input:active {
+  border: 1px solid #1890FF;
 }

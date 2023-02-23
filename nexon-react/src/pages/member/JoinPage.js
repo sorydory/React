@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react';
 import Title from '../../components/Title';
 import { API_URL } from '../../config/apiurl';
 import { useNavigate } from 'react-router-dom';
+import './JoinPage.css';
 
 const JoinPage = () => {
     const navigate = useNavigate();
@@ -69,7 +70,7 @@ const JoinPage = () => {
       }, [formData.m_phone]);
     const onSubmit = (e) => {
         e.preventDefault();
-        //입력이 다 되었는지 체크
+        //입력이 다 외었는지 체크
         const reg1= /^[a-z0-9A-Z]{8,45}$/;
         const reg2= /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,45}$/;
         const reg4= /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -92,14 +93,14 @@ const JoinPage = () => {
                       }
                 }
                 else{
-                    alert("비밀번호와 비밀번호확인이 일치 하지않습니다")
+                    alert("비밀번호와 비밀번호 확인이 일치 하지않습니다")
                     setFormData({
                         ...formData,
                         m_passch:""
                     })
                 }
             }else{
-                alert("비밀번호를 다시 입력해주세요")
+                alert("8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.")
                 setFormData({
                     ...formData,
                     m_pass:""
@@ -128,59 +129,74 @@ const JoinPage = () => {
         })
     }
     return (
-        <div className='inner'>
-            <Title title="Join"/>
-            <div>
+        <div className='join'>
+            <Title title=""/>
+            <h2>회원가입</h2>
+            <div className='joinpg'>
                 <form onSubmit={onSubmit}>
                     <table className='defaulttable'>
                         <tbody>
-                            <tr>
-                                <td>이름</td>
+                            <tr className='name'>
+                                <td>이름 *</td>
                                 <td><input type="text" 
                                 name="m_name" value={formData.m_name} 
-                                onChange={onChange} /></td>
+                                onChange={onChange}/></td>
                             </tr>
-                            <tr>
-                                <td>아이디</td>
+                            <tr className='id'>
+                                <td>아이디 *</td>
                                 <td><input type="text" 
                                 name="m_id" value={formData.m_id} 
-                                onChange={onChange} /></td>
+                                onChange={onChange}/></td>
                             </tr>
-                            <tr>
-                                <td>비밀번호</td>
+                            <tr className='pass'>
+                                <td>비밀번호 *</td>
                                 <td><input type="password" 
                                 name="m_pass" value={formData.m_pass} 
-                                onChange={onChange} /></td>
+                                onChange={onChange}/></td>
                             </tr>
-                            <tr>
-                                <td>비밀번호 체크</td>
+                            <tr className='passch'>
+                                <td>비밀번호 체크 *</td>
                                 <td><input type="password"
                                 name="m_passch" value={formData.m_passch} 
-                                onChange={onChange} /></td>
+                                onChange={onChange}/></td>
                             </tr>
-                            <tr>
-                                <td>이메일</td>
+                            <tr className='email'>
+                                <td>이메일 *</td>
                                 <td><input type="text" 
                                 name="m_email" value={formData.m_email} 
-                                onChange={onChange} /></td>
-                            </tr>
-                            <tr>
-                                <td>전화번호</td>
-                                <td><input type="text"
-                                name="m_phone" value={formData.m_phone} 
-                                onChange={onChange} /></td>
-                            </tr>
-                            <tr>
-                                <td>주소</td>
-                                <td><input type="text"
-                                name="m_address1" value={formData.m_address1} 
-                                onChange={onChange} />
-                                <input type="text"
-                                name="m_address2" value={formData.m_address2} 
-                                onChange={onChange} />
+                                onChange={onChange}/> @
+                                    <select>
+                                        <option>직접입력</option>
+                                        <option>naver.com</option>
+                                        <option>gmail.com</option>
+                                        <option>hanmail.net</option>
+                                        <option>hotmail.com</option>
+                                        <option>nate.com</option>
+                                        <option>msn.com</option>
+                                    </select>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr className='number'>
+                                <td>전화번호 *</td>
+                                <td><input type="text"
+                                name="m_phone" value={formData.m_phone} 
+                                onChange={onChange}/></td>
+                            </tr>
+                            <tr className='adrress'>
+                                <td>주소 *</td>
+                                <td><input type="text"
+                                name="m_address1" value={formData.m_address1} 
+                                onChange={onChange}/>
+                                <input type="text"
+                                name="m_address2" value={formData.m_address2} 
+                                onChange={onChange}/>
+                                </td>
+                            </tr>   
+                            {/* <tr>
+                                <input type='checkbox' />
+                                <span>[필수] 넥슨컴퍼니 채용 회원가입을 위한 개인정보 수집 이용에 동의합니다.</span>
+                            </tr> */}
+                            <tr className='btn'>
                                <td colSpan={2}>
                                 <button type="submit">등록</button>
                                 <button type="reset">취소</button>
