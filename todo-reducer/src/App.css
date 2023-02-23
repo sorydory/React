@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+body{
+  background-color: rgb(226, 226, 226);
+}
+.todo input{
+  border-radius: 10px;
+  border:none;
+  width:30%;
+  line-height: 30px;
+}
+.todo button{
+  border-radius: 50%;
+  border: none;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  background-color:#fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+li{
+  list-style: none;
+}
+.header{
+  padding:10px 0;
+}

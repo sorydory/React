@@ -1,0 +1,6 @@
+*{margin: 0; padding:0; box-sizing: border-box;}
+li{list-style: none;}
+body{
+    font-family: '나눔고딕','맑은고딕',sans-serif;
+    background-color: lightslategray;
+}

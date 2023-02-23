@@ -1,0 +1,31 @@
+#login {
+  width: 100%;
+  height: 80vh;
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+}
+#login h2 {
+  margin-top: 150px;
+  height: 50px;
+  font-size: 35px;
+}
+#login .defaulttable {
+  margin: 0 auto;
+  width: 1200px;
+  height: 600px;
+  border-top: 3px solid #CECECE;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login .defaulttable .innertable {
+  line-height: 3.5;
+  width: 600px;
+  height: 500px;
+}
+#login .defaulttable .innertable tr input {
+  height: 30px;
+  width: 400px;
+}
